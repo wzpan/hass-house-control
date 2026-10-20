@@ -1,0 +1,18 @@
+# Minimal: put the card in a panel view (it fills the window, so `height` is ignored there).
+# Paste the contents of your plan.json into `plan:` — YAML is JSON, so the JSON body works as is.
+# To try it right away, use examples/demo-plan.json.
+type: custom:house-control-card
+plan: {}
+
+---
+# Full example, every option:
+type: custom:house-control-card
+height: 900                 # used when the card sits in a masonry/grid view
+plan: { }                   # required: House Control plan.json contents
+quality: high               # high | medium | low   (omit = auto pick + auto step-down)
+platform: "*"               # require plan entities to come from one integration
+                            # (default "xiaomi_home"; "*" accepts any)
+ac_rule: true               # only the Away scene may switch ACs off (default true)
+away_scene: away            # the id of that Away scene (default "away")
+app_url: /local/house-control/embed.html
+dashboard_path: null        # null = /lovelace, or a named storage dashboard url_path
